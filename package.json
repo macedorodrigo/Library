@@ -1,0 +1,32 @@
+{
+  "name": "agora-vai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "create": "npx sequelize-cli db:create",
+    "drop": "npx sequelize-cli db:drop",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed:undo": "npx sequelize-cli db:seed:undo:all",
+    "reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "docker": "docker container run --name library -e MYSQL_ROOT_PASSWORD=senha -d -p 3306:3306 mysql:8.0.29",
+    "docker:down": "docker rm -f $(docker ps -a -q)"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "2.1.0",
+    "nodemon": "^2.0.22",
+    "sequelize": "6.3.4"
+  },
+  "devDependencies": {
+    "sequelize-cli": "6.2.0"
+  }
+}
